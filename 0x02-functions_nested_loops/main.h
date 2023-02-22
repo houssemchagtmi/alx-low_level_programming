@@ -38,4 +38,7 @@ int add(int, int);
 void print_to_98(int n);
 
 #endif /* main_h */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4de7cbb04ca244eff52d66bf676938b8ffcbd83f
