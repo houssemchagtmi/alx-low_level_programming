@@ -1,38 +1,28 @@
 #include <stdio.h>
-#include <math.h>
 
 /**
- * main - finds and prints the largest prime factor of the number 612852475143
+ * main - finds and prints the largest prime factor of 612852475143
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
-    long int num = 612852475143, maxFactor = -1, i;
+    long int n = 612852475143;
+    long int largest_factor = 2;
 
-    /* remove all factors of 2 first */
-    while (num % 2 == 0)
+    while (n > largest_factor)
     {
-        maxFactor = 2;
-        num /= 2;
-    }
-
-    /* now look for odd factors */
-    for (i = 3; i <= sqrt(num); i += 2)
-    {
-        while (num % i == 0)
+        if (n % largest_factor == 0)
         {
-            maxFactor = i;
-            num /= i;
+            n /= largest_factor;
+        }
+        else
+        {
+            largest_factor++;
         }
     }
 
-    /* num is now a prime number greater than 2 */
-    if (num > 2)
-        maxFactor = num;
-
-    printf("%ld\n", maxFactor);
+    printf("%ld\n", largest_factor);
 
     return (0);
 }
-
